@@ -2,7 +2,7 @@ const cityName = document.getElementById("cityName");
 const submitButton = document.getElementById("submitButton");
 const city_name = document.getElementById("city-name");
 const temp_status = document.getElementById("temp-status");
-const temp = document.getElementById("temp");
+const tempRealVal = document.getElementById("temp-real-val");
 const dataHide = document.querySelector(".middle-layer");
 const getInfo = async (event) => {
   event.preventDefault();
@@ -19,7 +19,7 @@ const getInfo = async (event) => {
       console.log(url);
 
       console.log(arrayData);
-      temp.innerText = (arrayData[0].main.temp-273).toFixed(2);
+      tempRealVal.innerText = (arrayData[0].main.temp-273).toFixed(2);
       city_name.innerText = `${arrayData[0].name} ${arrayData[0].sys.country} `;
       const tempMod = arrayData[0].weather[0].main;
       if (tempMod == "Clear") {
